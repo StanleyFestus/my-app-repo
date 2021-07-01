@@ -1,11 +1,10 @@
-import logo from './logo.svg';
+import Navigation from "./components/Navigation";
+import { BrowserRouter as Router, Switch, Route} from 'react-router-dom'
 
-function App() {
+const Landing = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
+    <>
+       <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
         <a
@@ -16,7 +15,45 @@ function App() {
         >
           Learn React
         </a>
+    </>
+  )
+}
+
+const Experiment = () => {
+  return (
+    <div>
+      Experiment
+    </div>
+  )
+}
+
+const Contact = () => {
+  return (
+    <div>
+      Contact
+    </div>
+  )
+}
+
+function App() {
+  return (
+    <div className="App">
+      <Router>
+      <header className="App-header">
+        <Navigation />
       </header>
+        <Switch>
+          <Route   exact path="/">
+            <Landing />
+          </Route>
+          <Route path="/contact">
+            <Contact />
+          </Route>
+          <Route path="/experiment">
+            <Experiment />
+          </Route>
+        </Switch>
+      </Router>
     </div>
   );
 }

@@ -1,0 +1,17 @@
+.nav {
+  display: flex;
+  justify-content: space-around;
+  background-color: crimson;
+  height: 4vh;
+  margin-top: 0;
+}
+
+.link-item {
+  text-decoration: none;
+  color: aliceblue;
+  font-size:large;
+  font-weight:bolder;
+}
+.active {
+  background-color:darkred
+}
